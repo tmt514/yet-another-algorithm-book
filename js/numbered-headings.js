@@ -5,26 +5,32 @@ var addRule = function(sheet, selector, styles) {
   if (sheet.addRule) return sheet.addRule(selector, styles);
 };
 
-var setNumbering = function(o, levels, root) {
-  console.log(o, levels, root);
-  if (!root) return;
-  if (!levels) return;
-  if (levels.length == 0) return;
-  
-  children = $(root).children(levels[0]);
-  chopped = levels.slice(1);
-  for (var i = 1; i <= children.length; i++) {
-    addRule(document.styleSheets[0], levels[0]+"#"+$(children[i-1]).attr('id')+":before", "content: '" + o + i + "'");
-    console.log(o + i, children[i-1]);
-    setNumbering(o + i + ".", chopped, children[i-1]);
-  }
-}
-
-  var title = $(".page-inner h1").first().text();
+var getNumbering = function(title) {
   var numbering = title.match(/^(?:Chapter )?(\d*)?\./);
   var o = "";
   if (numbering !== null && numbering[1] !== undefined) {
-    o = numbering[1] + ".";
+    o = numbering[1];
   }
-  setNumbering(o, ["h2", "h3", "h4"], $(".page-inner h1").first());
+  return o;
+}
+
+  p = $("section.normal").children("h1,h2,h3,h4");
+  var o = [];
+  $(p).each(function(e) {
+    if ($(e).is('h1')) o = [];
+    else if ($(e).is('h2')) o.slice(0, 2);
+    else if ($(e).is('h3')) o.slice(0, 3);
+    else if ($(e).is('h4')) o.slice(0, 4);
+    
+    if ($(e).is('h1') && o.length < 1) o = [getNumbering($(e).text())];
+    while ($(e).is('h2') && o.length < 2) o.push(0);
+    while ($(e).is('h3') && o.length < 3) o.push(0);
+    while ($(e).is('h4') && o.length < 4) o.push(0);
+
+    if ($(e).is('h2') || $(e).is('h3') || $(e).is('h4')) o.push(o.pop() + 1);
+    console.log(o.join('.'));
+    var w = o.join('.');
+    if (w[0] === '.') w = w.slice(1);
+    addRule(document.styleSheets[0], "#"+$(e).attr('id')+":before", "content: '" + w + " '");
+  });
 

@@ -6,6 +6,7 @@ var addRule = function(sheet, selector, styles) {
 };
 
 var setNumbering = function(o, levels, root) {
+  console.log(o, levels, root);
   if (!root) return;
   if (!levels) return;
   if (levels.length == 0) return;

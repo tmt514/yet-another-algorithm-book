@@ -33,6 +33,6 @@ var getNumbering = function(title) {
     console.log(o.join('.'));
     var w = o.join('.');
     if (w[0] === '.') w = w.slice(1);
-    addRule(document.styleSheets[0], "#"+$(e).attr('id')+":before", "content: '" + w + " '");
+    addRule(document.styleSheets[0], "#"+$(e).attr('id')+":before", "content: '" + w + "'");
   });
 

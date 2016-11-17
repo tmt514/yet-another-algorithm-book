@@ -1,4 +1,3 @@
-console.log('hi', $)
 
 // copied from http://stackoverflow.com/questions/10061414/changing-width-property-of-a-before-css-selector-using-jquery
 var addRule = function(sheet, selector, styles) {
@@ -20,7 +19,6 @@ var setNumbering = function(o, levels, root) {
   }
 }
 
-$(document).ready(function() {
   var title = $(".page-inner h1").first().text();
   var numbering = title.match(/^(?:Chapter )?(\d*)?\./);
   var o = "";
@@ -29,4 +27,3 @@ $(document).ready(function() {
   }
   setNumbering(o, ["h2", "h3", "h4"], $(".page-inner h1").first());
 
-});

@@ -4,5 +4,11 @@
         "include-codeblock",
         "scripts"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+        "scripts": {
+            "files": [
+                "./myscript.js"
+            ]
+        }
+    }
 }

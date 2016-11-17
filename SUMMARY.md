@@ -8,3 +8,4 @@
 * [7. 隨機演算法](randomized-algorithms/intro.md)
 * [8. 字串演算法](strings/intro.md)
 * [9. 幾何演算法](geometry/intro.md)
+* [10. 動態演算法](dynamic-algorithms/intro.md)

@@ -1,7 +1,8 @@
 {
     "plugins": [
         "mathjax",
-        "include-codeblock"
+        "include-codeblock",
+        "scripts"
     ],
     "pluginsConfig": {}
 }

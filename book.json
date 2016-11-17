@@ -7,7 +7,7 @@
     "pluginsConfig": {
         "scripts": {
             "files": [
-                "./myscript.js"
+                "./js/numbered-headings.js"
             ]
         }
     }

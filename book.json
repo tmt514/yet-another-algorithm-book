@@ -1,8 +1,7 @@
 {
     "plugins": [
         "mathjax",
-        "include-codeblock",
-        "-numbered-headings-for-web-and-books"
+        "include-codeblock"
     ],
     "pluginsConfig": {}
 }

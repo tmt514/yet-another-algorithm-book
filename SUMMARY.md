@@ -1,4 +1,4 @@
 # Summary
 
-* preliminaries/intro.md
+* [preliminaries/intro.md](preliminaries/intromd.md)
 

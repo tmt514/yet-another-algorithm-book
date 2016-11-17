@@ -1,1 +1,16 @@
 /* CSS for website */
+
+h2, h3 {
+  border-bottom: 1px solid #888;
+}
+
+h2:before {
+    background-color: #777;
+    color:  #EEE;
+    border-radius: 5px;
+}
+
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+    margin-right: 3px;
+    padding-left: 3px;
+}

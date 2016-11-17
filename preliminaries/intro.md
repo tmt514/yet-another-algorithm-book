@@ -2,7 +2,13 @@
 
 ## 數學部分
 
-### 集合
+### 本書符號設定
+
+#### 集合
+
+
+#### 數系
+$$\mathbb{N}\subseteq \mathbb{Z}\subseteq \mathbb{Q}\subseteq \mathbb{R}\subseteq\mathbb{C}$$
 
 ### 函數、指數與對數
 

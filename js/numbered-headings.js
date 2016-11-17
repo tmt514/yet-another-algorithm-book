@@ -5,11 +5,11 @@ function setNumbering(o, levels, root) {
   if (!levels) return;
   if (levels.length == 0) return;
   
-  children = $(root).child(levels[0]);
+  children = $(root).children(levels[0]);
   chopped = levels.slice(1);
-  for (var i = 0; i < children.length; i++) {
-    console.log(o + i, children[i]);
-    setNumbering(o + i + ".", chopped, children[i]);
+  for (var i = 1; i <= children.length; i++) {
+    console.log(o + i, children[i-1]);
+    setNumbering(o + i + ".", chopped, children[i-1]);
   }
 }
 

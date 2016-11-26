@@ -36,7 +36,7 @@ var getNumbering = function(title) {
     try {
       addRule(document.styleSheets[0], "#"+$(e).attr('id')+":before", "content: '" + w + "'");
     } catch (err) {
-      console(err.message);
+      console.log(err.message);
       // do nothing
     }
   });
